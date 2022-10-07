@@ -1,26 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import NavBar from "./components/NavBar";
 
-function App() {
+const App = () => {
+  const message: string = "Hello World";
+  const handleClick = (name: string) => alert(`Bonjour ${name} !`);
+  const handleClickSansParam = () => alert("c'est bien tu sais cliquer!");
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <NavBar />
+      <p>{message}</p>
+      <button className="color-pink" onClick={() => handleClick("Cassie")}>
+        Test Cassie
+      </button>
+      <button className="color-blue" onClick={() => handleClick("Jayceone")}>
+        Test Jayceone
+      </button>
+      <p>Coucou</p>
+      <button className="color-red" onClick={handleClickSansParam}>
+        Test Basique
+      </button>
     </div>
   );
-}
+};
 
 export default App;
