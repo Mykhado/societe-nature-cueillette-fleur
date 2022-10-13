@@ -4,8 +4,8 @@
 
 body {
   text-align: center;
-  background-color: blueviolet;
-  color: white;
+  background-color: whitesmoke;
+  color: rgb(0, 0, 0);
   height: 100vh;
 }
 p {

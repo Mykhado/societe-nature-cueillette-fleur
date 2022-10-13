@@ -1,14 +1,23 @@
 import "./App.css";
 import NavBar from "./components/NavBar";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Details from "./pages/Details";
+import Home from "./pages/Home";
+import NotFound from "./pages/NotFound";
 
 const App = () => {
-  const message: string = "Hello World";
-  const handleClick = (name: string) => alert(`Bonjour ${name} !`);
-  const handleClickSansParam = () => alert("c'est bien tu sais cliquer!");
+  // const message: string = "Hello World";
+  // const handleClick = (name: string) => alert(`Bonjour ${name} !`);
+  // const handleClickSansParam = () => alert("c'est bien tu sais cliquer!");
   return (
     <div>
-      <NavBar />
-      <p>{message}</p>
+      <BrowserRouter>
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/Details" element={<Details />} />
+          <Route path="*" element={<NotFound />} />
+          {/* <p>{message}</p>
       <button className="color-pink" onClick={() => handleClick("Cassie")}>
         Test Cassie
       </button>
@@ -18,7 +27,9 @@ const App = () => {
       <p>Coucou</p>
       <button className="color-red" onClick={handleClickSansParam}>
         Test Basique
-      </button>
+      </button> */}
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 };

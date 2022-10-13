@@ -1,10 +1,14 @@
+import { NavLink } from "react-router-dom";
 const NavBar = () => {
   return (
     <nav className="navbar sticky-top shadow navbar-expand-lg bg-light">
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">
-          Navbar
-        </a>
+        {/* <a className="navbar-brand" href="#">
+          
+        </a> */}
+        <NavLink to="/" end className="navbar-brand">
+          🌺 Societé Nature Cueillette et Fleur
+        </NavLink>
         <button
           className="navbar-toggler"
           type="button"
@@ -19,14 +23,20 @@ const NavBar = () => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#">
+              {/* <a className="nav-link active" aria-current="page" href="#">
                 Home
-              </a>
+              </a> */}
+              <NavLink to="/" end className="nav-link ">
+                Home
+              </NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              {/* <a className="nav-link" href="#">
                 Link
-              </a>
+              </a> */}
+              <NavLink to="Details" className="nav-link">
+                Détails
+              </NavLink>
             </li>
           </ul>
         </div>
