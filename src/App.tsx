@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Details from "./pages/Details";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
+import TriParCategorie from "./components/TriParCategorie";
 
 const App = () => {
   // const message: string = "Hello World";
@@ -17,6 +18,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/Details" element={<Details />} />
           <Route path="*" element={<NotFound />} />
+
           {/* <p>{message}</p>
       <button className="color-pink" onClick={() => handleClick("Cassie")}>
         Test Cassie
