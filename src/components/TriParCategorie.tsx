@@ -1,66 +1,31 @@
 import Input from "./Input";
 import { list_products } from "../Data";
+import _ from "lodash";
+import "./TriParCategorie.css";
+import { useState } from "react";
 
 const TriParCategorie = () => {
+  const [userCheck, setUserCheck] = useState();
+  const tabCategorieProduct = _.uniq(
+    list_products.map((item) => item.category)
+  );
+  console.log(tabCategorieProduct);
   return (
     <div>
-      <ul>
-        <li>
-          <Input
-            handleChange={(e) => console.log(e.target.value)}
-            inputType="checkbox"
-            inputValue="plantes fleuries"
-          />
-        </li>
-        <li>
-          {" "}
-          <Input
-            handleChange={(e) => console.log(e.target.value)}
-            inputType="checkbox"
-            inputValue="orchides"
-          />
-        </li>
-        <li>
-          {" "}
-          <Input
-            handleChange={(e) => console.log(e.target.value)}
-            inputType="checkbox"
-            inputValue="cactus et plantes grasses"
-          />
-        </li>
-        <li>
-          {" "}
-          <Input
-            handleChange={(e) => console.log(e.target.value)}
-            inputType="checkbox"
-            inputValue="bonsaïs"
-          />
-        </li>
-        <li>
-          {" "}
-          <Input
-            handleChange={(e) => console.log(e.target.value)}
-            inputType="checkbox"
-            inputValue="plantes vertes"
-          />
-        </li>
-        <li>
-          {" "}
-          <Input
-            handleChange={(e) => console.log(e.target.value)}
-            inputType="checkbox"
-            inputValue="palmiers d'intérieur"
-          />
-        </li>
-      </ul>
-      <ul>
-        {list_products.map((item) => (
-          <li key={item.id}>
-            id product : {item.id}
-            -name: {item.name} -categorie: {item.category}
-          </li>
-        ))}
-      </ul>
+      <div className="filtre">
+        <ul>
+          {tabCategorieProduct.map((item) => (
+            <li className="tricateside">
+              <Input
+                handleChange={(e) => console.log(e.target.value)}
+                inputType="checkbox"
+                inputValue={item}
+              />
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };

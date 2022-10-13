@@ -1,0 +1,6 @@
+.tricateside {
+  display: flex;
+  list-style-type: none;
+  font-size: 1em;
+  text-align: justify;
+}

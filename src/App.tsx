@@ -5,6 +5,7 @@ import Details from "./pages/Details";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import TriParCategorie from "./components/TriParCategorie";
+import Sidebar from "./components/Sidebar";
 
 const App = () => {
   // const message: string = "Hello World";
@@ -14,6 +15,7 @@ const App = () => {
     <div>
       <BrowserRouter>
         <NavBar />
+
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/Details" element={<Details />} />
