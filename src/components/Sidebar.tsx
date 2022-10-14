@@ -1,15 +1,14 @@
 import "./Sidebar.css";
-import { useState, Dispatch, SetStateAction } from "react";
+import { useState } from "react";
 import _ from "lodash";
 import { list_products } from "../Data";
 // import Home from "../pages/Home";
 // import App from "../App";
 export interface categorieCheck {
-  handleChangeChecked: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  setUserCheck: string[];
+  changeChecked: (unTableauTampon: string[]) => void;
 }
 
-const Sidebar = () => {
+const Sidebar = ({ changeChecked }: categorieCheck) => {
   const [userCheck, setUserCheck] = useState<string[]>([]);
   // let categorieCheck: string[] = [];
   const tabCategorieProduct = _.uniq(
@@ -27,8 +26,8 @@ const Sidebar = () => {
         ),
       ];
     }
-    setUserCheck([...unTableauTampon]);
-    console.log(unTableauTampon);
+    setUserCheck(unTableauTampon);
+    changeChecked(unTableauTampon);
   }
   return (
     <div className="side">
