@@ -4,12 +4,11 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Details from "./pages/Details";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
-import TriParCategorie from "./components/TriParCategorie";
+
 import Sidebar from "./components/Sidebar";
 import { useState } from "react";
 
 const App = () => {
-  const [userCheck, setUserCheck] = useState<string>("");
   // const message: string = "Hello World";
   // const handleClick = (name: string) => alert(`Bonjour ${name} !`);
   // const handleClickSansParam = () => alert("c'est bien tu sais cliquer!");
