@@ -2,30 +2,50 @@ import Input from "./Input";
 import { list_products } from "../Data";
 import _ from "lodash";
 import "./TriParCategorie.css";
-import { useState } from "react";
+import { useState, Dispatch, SetStateAction } from "react";
 
-const TriParCategorie = () => {
-  const [userCheck, setUserCheck] = useState();
+export interface resultCheckBox {
+  checkCategorie: string;
+}
+
+const TriParCategorie = ({
+  setUserCheck,
+}: {
+  setUserCheck: Dispatch<SetStateAction<string>>;
+}) => {
+  // const [userCheck, setUserCheck] = useState<string>("");
+  // let categorieCheck: string[] = [];
   const tabCategorieProduct = _.uniq(
     list_products.map((item) => item.category)
   );
-  console.log(tabCategorieProduct);
+
   return (
     <div>
       <div className="filtre">
         <ul>
-          {tabCategorieProduct.map((item) => (
-            <li className="tricateside">
+          {tabCategorieProduct.map((item, i) => (
+            <li key={i} className="tricateside">
               <Input
-                handleChange={(e) => console.log(e.target.value)}
+                handleChange={(e) => {
+                  // if (e.target.checked === true) {
+                  setUserCheck(e.target.value);
+
+                  //   categorieCheck=[...];
+                  // } else {
+                  //   setUserCheck(e;
+                  //   categorieCheck=[...userCheck];
+                  // }
+                }}
                 inputType="checkbox"
                 inputValue={item}
               />
+
               {item}
             </li>
           ))}
         </ul>
       </div>
+      {/* <>{console.log(userCheck)};</> */}
     </div>
   );
 };
