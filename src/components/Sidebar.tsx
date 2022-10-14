@@ -2,15 +2,12 @@ import "./Sidebar.css";
 import { useState } from "react";
 import _ from "lodash";
 import { list_products } from "../Data";
-// import Home from "../pages/Home";
-// import App from "../App";
 export interface categorieCheck {
   changeChecked: (unTableauTampon: string[]) => void;
 }
 
 const Sidebar = ({ changeChecked }: categorieCheck) => {
   const [userCheck, setUserCheck] = useState<string[]>([]);
-  // let categorieCheck: string[] = [];
   const tabCategorieProduct = _.uniq(
     list_products.map((item) => item.category)
   );
